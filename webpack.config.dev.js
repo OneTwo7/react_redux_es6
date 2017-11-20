@@ -22,7 +22,7 @@ export default {
     new webpack.NoEmitOnErrorsPlugin()
   ],
   module: {
-    loaders: [
+    rules: [
       {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel-loader']},
       {test: /(\.css)$/, loaders: ['style-loader', 'css-loader']},
       { test: /\.(woff2?|svg)$/, loader: 'url-loader?limit=10000' },
