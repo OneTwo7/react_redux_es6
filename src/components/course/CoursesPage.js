@@ -54,7 +54,7 @@ class CoursesPage extends Component {
   }
 }
 
-CoursesPage.PropTypes = {
+CoursesPage.propTypes = {
   courses: PropTypes.array.isRequired,
   createCourse: PropTypes.func.isRequired
 };
