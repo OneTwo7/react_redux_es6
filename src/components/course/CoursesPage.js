@@ -1,28 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createCourse } from '../../actions/courseAction';
 import PropTypes from 'prop-types';
+import CourseList from './CourseList';
 
 class CoursesPage extends Component {
   constructor (props) {
     super(props);
-    this.state = {
-      course: { title: '' }
-    };
-
-    this.onTitleChange = this.onTitleChange.bind(this);
-    this.onClickSave = this.onClickSave.bind(this);
-  }
-
-  onTitleChange (event) {
-    const course = this.state.course;
-    course.title = event.target.value;
-    this.setState({ course: course });
-  }
-
-  onClickSave (event) {
-    this.props.createCourse(this.state.course);
-    event.preventDefault();
   }
 
   courseRow (course, index) {
@@ -32,31 +15,19 @@ class CoursesPage extends Component {
   }
 
   render () {
+    const { courses } = this.props;
+
     return (
       <div>
         <h1>Courses</h1>
-        <h2>Add Course</h2>
-        {this.props.courses.map(this.courseRow)}
-        <form>
-          <input
-            type="text"
-            onChange={this.onTitleChange}
-            value={this.state.course.title}
-          />
-          <input
-            type="submit"
-            onClick={this.onClickSave}
-            value="Save"
-          />
-        </form>
+        <CourseList courses={courses} />
       </div>
     );
   }
 }
 
 CoursesPage.propTypes = {
-  courses: PropTypes.array.isRequired,
-  createCourse: PropTypes.func.isRequired
+  courses: PropTypes.array.isRequired
 };
 
 function mapStateToProps (state) {
@@ -65,4 +36,4 @@ function mapStateToProps (state) {
   };
 }
 
-export default connect(mapStateToProps, { createCourse })(CoursesPage);
+export default connect(mapStateToProps, {})(CoursesPage);
