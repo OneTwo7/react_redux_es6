@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import CourseList from './CourseList';
+import { Link } from 'react-router-dom';
 
 class CoursesPage extends Component {
   constructor (props) {
     super(props);
-  }
-
-  courseRow (course, index) {
-    return (
-      <div key={index}>{course.title}</div>
-    );
   }
 
   render () {
@@ -20,6 +15,7 @@ class CoursesPage extends Component {
     return (
       <div>
         <h1>Courses</h1>
+        <Link to="/course" className="btn btn-primary">Add Course</Link>
         <CourseList courses={courses} />
       </div>
     );
