@@ -23,6 +23,11 @@ process.env.NODE_ENV = 'test';
 // before our tests run.
 require('babel-register')();
 
+var configure = require('enzyme').configure;
+var Adapter = require('enzyme-adapter-react-16');
+
+configure({ adapter: new Adapter() });
+
 // Disable webpack-specific features for tests since
 // Mocha doesn't know what to do with them.
 require.extensions['.css'] = function () {return null;};

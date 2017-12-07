@@ -8,7 +8,7 @@
     "open:src": "babel-node tools/srcServer.js",
     "lint": "esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
+    "test": "mocha --reporter spec tools/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch"
   },
   "license": "MIT",
@@ -47,6 +47,7 @@
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.11.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "^7.4.0",
