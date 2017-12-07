@@ -5,7 +5,7 @@ import Header from './common/Header';
 import HomePage from './home/HomePage';
 import AboutPage from './about/AboutPage';
 import CoursesPage from './course/CoursesPage';
-import ManageCoursePage from './course/ManageCoursePage';
+import ManageCoursePage from './course/ManageCoursePage'; // eslint-disable-line import/no-named-as-default
 import PropTypes from 'prop-types';
 
 class App extends Component {
